@@ -42,11 +42,6 @@
 
     <menuitem name="HRS" id="mce_hr.menu_root"/>
 
-    <!-- menu categories -->
-
-    <menuitem name="Employee" id="mce_hr.employee" parent="mce_hr.menu_root"/>
-    <!-- <menuitem name="Menu 2" id="mce_hr.menu_2" parent="mce_hr.menu_root"/> -->
-
     <!-- actions -->
 
     <menuitem name="Employee List" id="mce_hr.menu_employee_list" parent="mce_hr.employee"

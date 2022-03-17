@@ -26,6 +26,7 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/mce_employee_views.xml',
+        'views/mce_leave_views.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode

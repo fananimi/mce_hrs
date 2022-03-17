@@ -1,0 +1,58 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="view_leave_tree">
+      <field name="name">Leave Tree</field>
+      <field name="model">mce_hr.leave</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="mce_hr.view_leave_list">
+      <field name="name">Leave List</field>
+      <field name="res_model">mce_hr.leave</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="mce_hr.action_server">
+      <field name="name">mce_hr server</field>
+      <field name="model_id" ref="model_mce_hr_mce_hr"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <!-- <menuitem name="HRS" id="mce_hr.menu_root"/> -->
+
+    <!-- menu categories -->
+
+    <menuitem name="Leave" id="mce_hr.leave" parent="mce_hr.menu_root"/>
+    <!-- <menuitem name="Menu 2" id="mce_hr.menu_2" parent="mce_hr.menu_root"/> -->
+
+    <!-- actions -->
+
+    <menuitem name="Leave List" id="mce_hr.menu_leave_list" parent="mce_hr.leave"
+              action="mce_hr.view_leave_list"/>
+    <!-- <menuitem name="Server to list" id="mce_hr" parent="mce_hr.menu_2" -->
+              <!-- action="mce_hr.action_server"/> -->
+
+  </data>
+</odoo>

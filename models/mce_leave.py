@@ -8,6 +8,7 @@ from odoo import models, fields, api, _
 class Leave(models.Model):
     _name = 'mce_hr.leave'
     _description = 'Leave'
+    _order = 'date_from DESC'
 
     name = fields.Char(readonly=True, string="Display name", compute='_compute_name')
     employee_id = fields.Many2one('mce_hr.employee', required=True)

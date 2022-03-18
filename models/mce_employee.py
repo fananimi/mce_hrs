@@ -9,6 +9,7 @@ ADDRESS_FIELDS = (
 class Employee(models.Model):
     _name = 'mce_hr.employee'
     _description = 'Employee'
+    _order = 'name'
 
     name = fields.Char(string="Employee Name", required=True)
     register_id = fields.Char(string="Employee ID", required=True)

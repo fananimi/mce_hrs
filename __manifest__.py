@@ -28,9 +28,9 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/mce_menu.xml',
+        'views/mce_address_views.xml',
         'views/mce_employee_views.xml',
-        'views/mce_leave_views.xml',
-        'views/templates.xml',
+        'views/mce_leave_views.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

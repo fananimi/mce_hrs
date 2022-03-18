@@ -38,16 +38,10 @@
     </record>
 -->
 
-    <!-- Top menu item -->
-
-    <menuitem name="HRS" id="mce_hr.menu_root"/>
-
     <!-- actions -->
 
-    <menuitem name="Employee List" id="mce_hr.menu_employee_list" parent="mce_hr.employee"
+    <menuitem name="Employees" id="mce_hr.menu_employee_list" parent="mce_hr.employee"
               action="mce_hr.view_employee_list"/>
-    <!-- <menuitem name="Server to list" id="mce_hr" parent="mce_hr.menu_2" -->
-              <!-- action="mce_hr.action_server"/> -->
 
   </data>
 </odoo>

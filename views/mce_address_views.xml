@@ -1,0 +1,107 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="view_state_tree">
+      <field name="name">State Tree</field>
+      <field name="model">res.country.state</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_city_tree">
+      <field name="name">City Tree</field>
+      <field name="model">res.country.city</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_district_tree">
+      <field name="name">District Tree</field>
+      <field name="model">res.country.district</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_subdistrict_tree">
+      <field name="name">Sub-district Tree</field>
+      <field name="model">res.country.subdistrict</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="mce_hr.view_country_list">
+      <field name="name">Country List</field>
+      <field name="res_model">res.country</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mce_hr.view_state_list">
+      <field name="name">State List</field>
+      <field name="res_model">res.country.state</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mce_hr.view_city_list">
+      <field name="name">City List</field>
+      <field name="res_model">res.country.city</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mce_hr.view_district_list">
+      <field name="name">Distric List</field>
+      <field name="res_model">res.country.district</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mce_hr.view_subdistrict_list">
+      <field name="name">Sub-distric List</field>
+      <field name="res_model">res.country.subdistrict</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="mce_hr.action_server">
+      <field name="name">mce_hr server</field>
+      <field name="model_id" ref="model_mce_hr_mce_hr"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- actions -->
+
+    <menuitem name="Countries" id="mce_hr.menu_country_list" parent="mce_hr.address"
+              action="mce_hr.view_country_list"/>
+    <menuitem name="States" id="mce_hr.menu_state_list" parent="mce_hr.address"
+              action="mce_hr.view_state_list"/>
+    <menuitem name="Cities" id="mce_hr.menu_city_list" parent="mce_hr.address"
+              action="mce_hr.view_city_list"/>
+    <menuitem name="Districts" id="mce_hr.menu_district_list" parent="mce_hr.address"
+              action="mce_hr.view_district_list"/>
+    <menuitem name="Sub-districts" id="mce_hr.menu_subdistrict_list" parent="mce_hr.address"
+              action="mce_hr.view_subdistrict_list"/>
+
+  </data>
+</odoo>

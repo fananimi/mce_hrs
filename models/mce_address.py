@@ -12,6 +12,7 @@ class ResCountryState(models.Model):
 
 class ResCountryCity(models.Model):
     _name = 'res.country.city'
+    _description = 'Cities'
     _order = 'name'
 
     name = fields.Char('Name', required=True)
@@ -23,6 +24,7 @@ class ResCountryCity(models.Model):
 
 class ResCountryDistrict(models.Model):
     _name = 'res.country.district'
+    _description = 'Districts'
     _order = 'name'
 
     name = fields.Char('Name', required=True)
@@ -36,6 +38,7 @@ class ResCountryDistrict(models.Model):
 
 class ResCountrySubDistrict(models.Model):
     _name = 'res.country.subdistrict'
+    _description = 'Sub-districts'
     _order = 'name'
 
     name = fields.Char('Name', required=True)

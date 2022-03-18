@@ -1,7 +1,0 @@
-id,name,address_format
-base.id,INDONESIA,"%(street)s
-%(street2)s
-%(subdistrict_name)s, %(district_name)s
-%(city_name)s - %(state_name)s
-%(country_name)s
-%(zip)s"

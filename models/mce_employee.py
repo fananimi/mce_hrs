@@ -12,7 +12,7 @@ class Employee(models.Model):
 
     name = fields.Char(string="Employee Name", required=True)
     employee_id = fields.Char(string="Employee ID", required=True)
-    birt_date = fields.Date(string="Birth date", required=True)
+    birth_date = fields.Date(string="Birth date", required=True)
     joined_date = fields.Date(string="Joined date", required=True)
 
     country_id = fields.Many2one('res.country', string='Country', ondelete='restrict',

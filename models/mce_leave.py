@@ -8,12 +8,20 @@ class Leave(models.Model):
     _name = 'mce_hr.leave'
     _description = 'Leave'
 
-    name = fields.Char(required=True, string="Display name")
+    name = fields.Char(readonly=True, string="Display name", compute='_compute_name')
     employee_id = fields.Many2one('mce_hr.employee', required=True)
+    employee_name = fields.Char(readonly=True, related="employee_id.name")
+    employee_reg_id = fields.Char(readonly=True, related="employee_id.employee_id", string="Employee ID")
     date_from = fields.Date(required=True, string="Start Date")
     date_to = fields.Date(required=True, string="End Date")
     duration = fields.Integer(compute='_compute_duration', string='Leave Duration', readonly=True)
-    description = fields.Date(required=True, string="Description")
+    description = fields.Text(required=True, string="Description")
+
+    @api.depends('duration', 'description')
+    def _compute_name(self):
+        for leave in self:
+            leave.name = "%d day(s) leave of %s for %s" % (leave.duration, leave.employee_id.name, leave.description)
+
 
     @api.depends('date_from', 'date_to')
     def _compute_duration(self):

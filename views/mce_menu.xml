@@ -3,7 +3,7 @@
 
     <!-- Top menu item -->
 
-    <menuitem name="HRS"
+    <menuitem name="HRIS"
         id="mce_hr.menu_root"
         web_icon="mce_hr,static/description/menu.png"/>
 

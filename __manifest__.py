@@ -33,7 +33,10 @@
         'data/res.country.district.csv',
         'data/res.country.subdistrict.csv',
 
-        # 'security/ir.model.access.csv',
+        # security
+        'security/mce_hr_security.xml',
+
+        # menuitem
         'views/mce_menu.xml',
         'views/mce_address_views.xml',
         'views/mce_employee_views.xml',

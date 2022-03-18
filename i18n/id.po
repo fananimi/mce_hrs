@@ -1,0 +1,367 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mce_hr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-18 02:37+0000\n"
+"PO-Revision-Date: 2022-03-18 02:37+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mce_hr
+#: model_terms:ir.ui.view,arch_db:mce_hr.view_employee_form
+msgid ""
+"<span class=\"oe_read_only\" attrs=\"{'invisible': ['|', ('city_id', '=', False), ('state_id', '=', False)]}\">&amp;nbsp;-&amp;nbsp;\n"
+"                  </span>"
+msgstr ""
+
+#. module: mce_hr
+#: model_terms:ir.ui.view,arch_db:mce_hr.view_employee_form
+msgid ""
+"<span class=\"oe_read_only\" attrs=\"{'invisible': ['|', ('street', '=', False), ('street2', '=', False)]}\">&amp;nbsp; - &amp;nbsp;\n"
+"                  </span>"
+msgstr ""
+
+#. module: mce_hr
+#: model_terms:ir.ui.view,arch_db:mce_hr.view_employee_form
+msgid ""
+"<span class=\"oe_read_only\" attrs=\"{'invisible': ['|', ('subdistrict_id', '=', False), ('district_id', '=', False)]}\">,&amp;nbsp;\n"
+"                  </span>"
+msgstr ""
+
+#. module: mce_hr
+#: model:ir.ui.menu,name:mce_hr.address
+#: model_terms:ir.ui.view,arch_db:mce_hr.view_employee_form
+msgid "Address"
+msgstr "Alamat"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee__street
+msgid "Address Line 1"
+msgstr "Alamat utama"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee__street2
+msgid "Address Line 2"
+msgstr "Alamat (info tambahan)"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee__birt_date
+msgid "Birth date"
+msgstr "Tanggal lahir"
+
+#. module: mce_hr
+#: model:ir.model,name:mce_hr.model_res_country_city
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_state__city_ids
+#: model:ir.ui.menu,name:mce_hr.menu_city_list
+msgid "Cities"
+msgstr "Kota-kota"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee__city
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee__city_id
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_district__city_id
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_subdistrict__city_id
+#: model_terms:ir.ui.view,arch_db:mce_hr.view_employee_form
+msgid "City"
+msgstr "Kota"
+
+#. module: mce_hr
+#: model:ir.actions.act_window,name:mce_hr.view_city_list
+msgid "City List"
+msgstr "Daftar Kota"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_city__code
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_district__code
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_subdistrict__code
+msgid "Code"
+msgstr "Kode"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee__contact_address
+msgid "Complete Address"
+msgstr "Alamat Lengkap"
+
+#. module: mce_hr
+#: model:ir.ui.menu,name:mce_hr.menu_country_list
+msgid "Countries"
+msgstr "Negara-Negara"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee__country_id
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_city__country_id
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_district__country_id
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_subdistrict__country_id
+#: model_terms:ir.ui.view,arch_db:mce_hr.view_employee_form
+msgid "Country"
+msgstr "Negara"
+
+#. module: mce_hr
+#: model:ir.actions.act_window,name:mce_hr.view_country_list
+msgid "Country List"
+msgstr "Daftar Negara"
+
+#. module: mce_hr
+#: model:ir.model,name:mce_hr.model_res_country_state
+msgid "Country state"
+msgstr "Provinsi"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee__create_uid
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_leave__create_uid
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_city__create_uid
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_district__create_uid
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_subdistrict__create_uid
+msgid "Created by"
+msgstr "Dibuat oleh"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee__create_date
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_leave__create_date
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_city__create_date
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_district__create_date
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_subdistrict__create_date
+msgid "Created on"
+msgstr "Dibuat pada"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_leave__description
+msgid "Description"
+msgstr "Keterangan"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee__display_name
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_leave__display_name
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_city__display_name
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_district__display_name
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_state__display_name
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_subdistrict__display_name
+msgid "Display Name"
+msgstr "Nama Tampilan"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_leave__name
+msgid "Display name"
+msgstr "Nama tampilan"
+
+#. module: mce_hr
+#: model:ir.actions.act_window,name:mce_hr.view_district_list
+msgid "Distric List"
+msgstr "Daftar Kecamatan"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee__district_id
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_subdistrict__district_id
+#: model_terms:ir.ui.view,arch_db:mce_hr.view_employee_form
+msgid "District"
+msgstr "Kecamatan"
+
+#. module: mce_hr
+#: model:ir.model,name:mce_hr.model_res_country_district
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_city__district_ids
+#: model:ir.ui.menu,name:mce_hr.menu_district_list
+msgid "Districts"
+msgstr "Kecamatan-Kecamatan"
+
+#. module: mce_hr
+#: model:ir.model,name:mce_hr.model_mce_hr_employee
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_leave__employee_id
+#: model:ir.ui.menu,name:mce_hr.employee
+msgid "Employee"
+msgstr "Karyawan"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee__employee_id
+msgid "Employee ID"
+msgstr "Nomor Induk"
+
+#. module: mce_hr
+#: model:ir.actions.act_window,name:mce_hr.view_employee_list
+msgid "Employee List"
+msgstr "Daftar Karyawan"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee__name
+msgid "Employee Name"
+msgstr "Nama Karyawan"
+
+#. module: mce_hr
+#: model:ir.ui.menu,name:mce_hr.menu_employee_list
+msgid "Employees"
+msgstr "Karyawan-Karyawan"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_leave__date_to
+msgid "End Date"
+msgstr "Tanggal Berahir"
+
+#. module: mce_hr
+#: model:ir.ui.menu,name:mce_hr.menu_root
+msgid "HRS"
+msgstr "HRS"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee__id
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_leave__id
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_city__id
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_district__id
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_state__id
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_subdistrict__id
+msgid "ID"
+msgstr ""
+
+#. module: mce_hr
+#: code:addons/mce_hr/models/mce_leave.py:0
+#, python-format
+msgid "Incorrect End date!"
+msgstr "Tanggal berahir tidak sesuai!"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee__joined_date
+msgid "Joined date"
+msgstr "Tanggal bergabung"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee____last_update
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_leave____last_update
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_city____last_update
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_district____last_update
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_state____last_update
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_subdistrict____last_update
+msgid "Last Modified on"
+msgstr "Terakhir diubah pada"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee__write_uid
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_leave__write_uid
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_city__write_uid
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_district__write_uid
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_subdistrict__write_uid
+msgid "Last Updated by"
+msgstr "Terakhir diperbaharui pada"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee__write_date
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_leave__write_date
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_city__write_date
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_district__write_date
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_subdistrict__write_date
+msgid "Last Updated on"
+msgstr "Terakhir diperbaharui pada"
+
+#. module: mce_hr
+#: model:ir.model,name:mce_hr.model_mce_hr_leave
+#: model:ir.ui.menu,name:mce_hr.leave
+msgid "Leave"
+msgstr "Cuti"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_leave__duration
+msgid "Leave Duration"
+msgstr "Lama Cuti"
+
+#. module: mce_hr
+#: model:ir.actions.act_window,name:mce_hr.view_leave_list
+msgid "Leave List"
+msgstr "Daftar Cuti"
+
+#. module: mce_hr
+#: model:ir.ui.menu,name:mce_hr.menu_leave_list
+msgid "Leaves"
+msgstr "Cuti-Cuti"
+
+#. module: mce_hr
+#: model:ir.model.fields,help:mce_hr.field_res_country_state__city_ids
+msgid "List of cities in this country state"
+msgstr "Daftar kota pada negara ini"
+
+#. module: mce_hr
+#: model:ir.model.fields,help:mce_hr.field_res_country_city__district_ids
+msgid "List of districts in this city"
+msgstr "Daftar kecamatan pada kota ini"
+
+#. module: mce_hr
+#: model:ir.model.fields,help:mce_hr.field_res_country_district__subdistrict_ids
+msgid "List of sub districts in this district"
+msgstr "Dafatr desa pada kecamatan ini"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_city__name
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_district__name
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_subdistrict__name
+msgid "Name"
+msgstr "Nama"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_leave__date_from
+msgid "Start Date"
+msgstr "Tanggal Mulai"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee__state_id
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_city__state_id
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_district__state_id
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_subdistrict__state_id
+#: model_terms:ir.ui.view,arch_db:mce_hr.view_employee_form
+msgid "State"
+msgstr "Provinsi"
+
+#. module: mce_hr
+#: model:ir.actions.act_window,name:mce_hr.view_state_list
+msgid "State List"
+msgstr "Daftar Provinsi"
+
+#. module: mce_hr
+#: model:ir.ui.menu,name:mce_hr.menu_state_list
+msgid "States"
+msgstr "Provinsi-Provinsi"
+
+#. module: mce_hr
+#: model_terms:ir.ui.view,arch_db:mce_hr.view_employee_form
+msgid "Street 2..."
+msgstr "Jl. Merdeka Barat Nomor 1"
+
+#. module: mce_hr
+#: model_terms:ir.ui.view,arch_db:mce_hr.view_employee_form
+msgid "Street..."
+msgstr "Gedung warna putih"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee__subdistrict_id
+#: model_terms:ir.ui.view,arch_db:mce_hr.view_employee_form
+msgid "Sub District"
+msgstr "Desa"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_res_country_district__subdistrict_ids
+msgid "Sub Districts"
+msgstr "Desa-Desa"
+
+#. module: mce_hr
+#: model:ir.actions.act_window,name:mce_hr.view_subdistrict_list
+msgid "Sub-distric List"
+msgstr "Daftar Desa"
+
+#. module: mce_hr
+#: model:ir.model,name:mce_hr.model_res_country_subdistrict
+#: model:ir.ui.menu,name:mce_hr.menu_subdistrict_list
+msgid "Sub-districts"
+msgstr "Desa-Desa"
+
+#. module: mce_hr
+#: model_terms:ir.ui.view,arch_db:mce_hr.view_employee_form
+msgid "ZIP"
+msgstr "Kode Pos"
+
+#. module: mce_hr
+#: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee__zip
+msgid "Zip"
+msgstr "Kode Pos"

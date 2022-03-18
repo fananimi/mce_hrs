@@ -1,5 +1,84 @@
 <odoo>
   <data>
+
+    <!-- explicit form view definition -->
+
+    <record model="ir.ui.view" id="view_employee_form">
+      <field name="name">Employee Form</field>
+      <field name="model">mce_hr.employee</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group>
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="birt_date"/>
+              </group>
+              <group>
+                <field name="joined_date"/>
+              </group>
+            </group>
+            <notebook>
+              <page string="Address">
+                <div class="o_address_format oe_edit_only">
+                  <group>
+                    <group>
+                      <field name="street" placeholder="Street..." class="o_address_street oe_edit_only"/>
+                      <field name="street2" placeholder="Street 2..." class="o_address_street oe_edit_only"/>
+                    </group>
+                    <group>
+                      <field name="subdistrict_id" placeholder="Sub District" class="o_address_subdistrict oe_edit_only"
+                             options='{"no_open": True, "no_create": True}'/>
+                      <field name="district_id" placeholder="District" class="o_address_district oe_edit_only"
+                             options='{"no_open": True, "no_create": True}'/>
+                      <field name="zip" placeholder="ZIP" class="o_address_zip_code oe_edit_only"/>
+                    </group>
+                  </group>
+                  <group>
+                    <group>
+                      <field name="state_id" placeholder="State" class="o_address_state oe_edit_only"
+                             options='{"no_open": True, "no_create": True}'/>
+                      <field name="city" invisible="1"/>
+                      <field name="city_id" placeholder="City" class="o_address_city oe_edit_only"
+                             options='{"no_open": True, "no_create": True}'/>
+                    </group>
+                    <group>
+                      <field name="country_id" placeholder="Country" class="o_address_country oe_edit_only"
+                               options='{"no_open": True, "no_create": True}'/>
+                    </group>
+                  </group>
+                </div>
+                <div class="oe_inline">
+                  <field name="street" placeholder="Street..." class="oe_read_only oe_inline"/>
+                  <span class="oe_read_only"
+                        attrs="{'invisible': ['|', ('street', '=', False), ('street2', '=', False)]}">&amp;nbsp; - &amp;nbsp;
+                  </span>
+                  <field name="street2" placeholder="Street 2..." class="oe_read_only oe_inline"/>
+                  <br/>
+                  <field name="subdistrict_id" placeholder="Sub District" class="oe_read_only oe_inline"/>
+                  <span class="oe_read_only"
+                        attrs="{'invisible': ['|', ('subdistrict_id', '=', False), ('district_id', '=', False)]}">,&amp;nbsp;
+                  </span>
+                  <field name="district_id" placeholder="District" class="oe_read_only oe_inline"/>
+                  <br/>
+                  <field name="city_id" placeholder="City" class="oe_read_only oe_inline"/>
+                  <span class="oe_read_only"
+                        attrs="{'invisible': ['|', ('city_id', '=', False), ('state_id', '=', False)]}">&amp;nbsp;-&amp;nbsp;
+                  </span>
+                  <field name="state_id" placeholder="State" class="oe_read_only oe_inline"/>
+                  <br/>
+                  <field name="country_id" placeholder="Country" class="oe_read_only"/>
+                  <br/>
+                  <field name="zip" placeholder="ZIP" class="oe_read_only"/>
+                </div>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
     <!-- explicit list view definition -->
 
     <record model="ir.ui.view" id="view_employee_tree">
@@ -7,7 +86,11 @@
       <field name="model">mce_hr.employee</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="employee_id"/>
           <field name="name"/>
+          <field name="contact_address"/>
+          <field name="birt_date"/>
+          <field name="joined_date"/>
         </tree>
       </field>
     </record>

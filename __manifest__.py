@@ -35,6 +35,7 @@
 
         # security
         'security/mce_hr_security.xml',
+        'security/ir.model.access.csv',
 
         # menuitem
         'views/mce_menu.xml',

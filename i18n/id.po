@@ -344,12 +344,12 @@ msgstr "Provinsi-Provinsi"
 #. module: mce_hr
 #: model_terms:ir.ui.view,arch_db:mce_hr.view_employee_form
 msgid "Street 2..."
-msgstr "Jl. Merdeka Barat Nomor 1"
+msgstr "Gedung warna putih"
 
 #. module: mce_hr
 #: model_terms:ir.ui.view,arch_db:mce_hr.view_employee_form
 msgid "Street..."
-msgstr "Gedung warna putih"
+msgstr "Jl. Merdeka Barat Nomor 1"
 
 #. module: mce_hr
 #: model:ir.model.fields,field_description:mce_hr.field_mce_hr_employee__subdistrict_id

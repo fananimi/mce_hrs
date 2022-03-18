@@ -26,6 +26,13 @@
 
     # always loaded
     'data': [
+        # data
+        'data/res.country.csv',
+        'data/res.country.state.csv',
+        'data/res.country.city.csv',
+        'data/res.country.district.csv',
+        'data/res.country.subdistrict.csv',
+
         # 'security/ir.model.access.csv',
         'views/mce_menu.xml',
         'views/mce_address_views.xml',

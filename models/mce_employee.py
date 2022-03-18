@@ -32,6 +32,10 @@ class Employee(models.Model):
     city = fields.Char()
     contact_address = fields.Char(compute='_compute_contact_address', string='Complete Address')
 
+    leave_ids = fields.One2many('mce_hr.leave', 'employee_id', string='Leave History',
+        readonly=True, copy=True, auto_join=True)
+
+
     @api.depends(lambda self: self._display_address_depends())
     def _compute_contact_address(self):
         for employee in self:

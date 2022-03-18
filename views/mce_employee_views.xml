@@ -73,6 +73,16 @@
                   <field name="zip" placeholder="ZIP" class="oe_read_only"/>
                 </div>
               </page>
+              <page string="Leave History" name="leave_ids">
+                <field name="leave_ids" widget="section_and_note_one2many" mode="tree" readonly="1">
+                  <tree string="Leave History">
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="duration"/>
+                    <field name="description"/>
+                  </tree>
+                </field>
+              </page>
             </notebook>
           </sheet>
         </form>

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "McEasy HRS",
+    'name': "McEasy HRIS",
 
     'summary': """
-        McEasy HRS module
+        McEasy HRIS module
     """,
 
     'description': """

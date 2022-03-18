@@ -8,6 +8,11 @@
       <field name="model">mce_hr.leave</field>
       <field name="arch" type="xml">
         <form>
+          <header>
+            <button name="action_approve" string="Approve" type="object" states="draft" class="btn-primary"
+                    groups="mce_hr.group_mce_hr_manager"/>
+            <field name="state" widget="statusbar" statusbar_visible="draft,waiting,done"/>
+          </header>
           <sheet>
             <group>
               <group>

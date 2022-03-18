@@ -17,6 +17,16 @@ class Leave(models.Model):
     duration = fields.Integer(compute='_compute_duration', string='Leave Duration', readonly=True)
     description = fields.Text(required=True, string="Description")
 
+    state = fields.Selection([
+        ('draft', 'Draft'),
+        ('waiting', 'Waiting to Approve'),
+        ('done', 'Approved')
+        ], string='Status', readonly=True, copy=False, index=True, default='draft')
+
+    def action_approve(self):
+        for leave in self:
+            leave.state = "done"
+
     @api.depends('duration', 'description')
     def _compute_name(self):
         for leave in self:

@@ -11,7 +11,8 @@
 
     <menuitem name="Employee" id="mce_hr.employee" parent="mce_hr.menu_root" sequence="10"/>
     <menuitem name="Leave" id="mce_hr.leave" parent="mce_hr.menu_root" sequence="20"/>
-    <menuitem name="Address" id="mce_hr.address" parent="mce_hr.menu_root" sequence="30"/>
+    <menuitem name="Address" id="mce_hr.address" parent="mce_hr.menu_root" sequence="30"
+              groups="base.group_no_one"/>
 
   </data>
 </odoo>

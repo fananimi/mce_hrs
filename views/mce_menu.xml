@@ -4,7 +4,9 @@
 
     <!-- Top menu item -->
 
-    <menuitem name="HRS" id="mce_hr.menu_root"/>
+    <menuitem name="HRS"
+      id="mce_hr.menu_root"
+      web_icon="mce_hr,static/description/menu.png"/>
 
     <!-- menu categories -->
 

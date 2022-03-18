@@ -11,7 +11,7 @@ class Leave(models.Model):
     name = fields.Char(readonly=True, string="Display name", compute='_compute_name')
     employee_id = fields.Many2one('mce_hr.employee', required=True)
     employee_name = fields.Char(readonly=True, related="employee_id.name")
-    employee_reg_id = fields.Char(readonly=True, related="employee_id.employee_id", string="Employee ID")
+    employee_reg_id = fields.Char(readonly=True, related="employee_id.register_id", string="Employee ID")
     date_from = fields.Date(required=True, string="Start Date")
     date_to = fields.Date(required=True, string="End Date")
     duration = fields.Integer(compute='_compute_duration', string='Leave Duration', readonly=True)

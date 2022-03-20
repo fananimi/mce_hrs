@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from dateutil.relativedelta import relativedelta
 from datetime import datetime
 from odoo.exceptions import ValidationError
 from odoo import models, fields, api, _
@@ -53,10 +54,8 @@ class Leave(models.Model):
     @api.model
     def get_remaining_leave(self, employee_id):
         today = datetime.now().date()
-        joined_date = employee_id.joined_date
-        join_duration = (today - joined_date).days / 365
-        multiplier = int(join_duration * 10 ** 0) / 10 ** 0
-        max_leave = multiplier * 12
+        joined_date = employee_id.joined_date + relativedelta(years=1)
+        max_leave = relativedelta(today, joined_date).years * 12
         domain = [
             ('employee_id', '=', employee_id.id),
             ('state', '=', 'done')

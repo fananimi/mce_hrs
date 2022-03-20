@@ -30,13 +30,13 @@ class Employee(models.Model):
     street = fields.Char(string="Address Line 1", required=True)
     street2 = fields.Char(string="Address Line 2", required=False)
     zip = fields.Char(change_default=True, required=False)
-    city = fields.Char()
+    city = fields.Char("City Name")
     contact_address = fields.Char(compute='_compute_contact_address', string='Complete Address')
 
     leave_ids = fields.One2many('mce_hr.leave', 'employee_id', string='Leave History',
         readonly=True, copy=True, auto_join=True, domain=[('state', '=', 'done')])
-    leave_count = fields.Integer(readonly=True, compute='_compute_leave_count')
-    leave_balance = fields.Integer(readonly=True, compute='_compute_leave_balance')
+    leave_count = fields.Integer(readonly=True, store=True, compute='_compute_leave_count')
+    leave_balance = fields.Integer(readonly=True, store=True, compute='_compute_leave_balance')
 
     @api.depends('leave_ids')
     def _compute_leave_count(self):

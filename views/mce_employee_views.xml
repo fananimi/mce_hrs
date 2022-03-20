@@ -110,10 +110,25 @@
           <field name="contact_address"/>
           <field name="birth_date"/>
           <field name="joined_date"/>
+          <field name="leave_count"/>
         </tree>
       </field>
     </record>
 
+
+    <!-- search views -->
+    <record model="ir.ui.view" id="view_employee_search">
+      <field name="name">Employee Search</field>
+      <field name="model">mce_hr.employee</field>
+      <field eval="3" name="priority"/>
+      <field name="arch" type="xml">
+        <search>
+          <field name="leave_count"/>
+          <filter string="Taken leave" name="leave_count" domain="[('leave_count', '&gt;', 0)]"/>
+          <filter string="Not Taken leave" name="leave_count" domain="[('leave_count', '=', 0)]"/>
+        </search>
+      </field>
+    </record>
 
     <!-- actions opening views on models -->
 
@@ -121,6 +136,7 @@
       <field name="name">Employee List</field>
       <field name="res_model">mce_hr.employee</field>
       <field name="view_mode">tree,form</field>
+      <field name="search_view_id" ref="view_employee_search"/>
     </record>
 
     <!-- actions -->

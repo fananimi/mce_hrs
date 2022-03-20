@@ -43,6 +43,7 @@ class Employee(models.Model):
         for employee in self:
             employee.leave_count = sum(employee.leave_ids.mapped('duration'))
 
+    @api.depends('joined_date')
     def _compute_leave_balance(self):
         for employee in self:
             employee.leave_balance = self.env['mce_hr.leave'].get_remaining_leave(employee)

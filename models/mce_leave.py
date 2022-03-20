@@ -53,8 +53,11 @@ class Leave(models.Model):
 
     @api.model
     def get_remaining_leave(self, employee_id):
+        if not employee_id.joined_date:
+            return 0
+
         today = datetime.now().date()
-        joined_date = employee_id.joined_date + relativedelta(years=1)
+        joined_date = employee_id.joined_date
         max_leave = relativedelta(today, joined_date).years * 12
         domain = [
             ('employee_id', '=', employee_id.id),

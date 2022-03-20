@@ -40,6 +40,7 @@
           <field name="employee_reg_id"/>
           <field name="employee_name"/>
           <field name="date_from"/>
+          <field name="duration"/>
           <field name="description"/>
           <field name="state"/>
         </tree>

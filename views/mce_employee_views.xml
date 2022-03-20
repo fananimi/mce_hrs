@@ -124,8 +124,9 @@
       <field name="arch" type="xml">
         <search>
           <field name="leave_count"/>
-          <filter string="Taken leave" name="leave_count" domain="[('leave_count', '&gt;', 0)]"/>
-          <filter string="Not Taken leave" name="leave_count" domain="[('leave_count', '=', 0)]"/>
+          <filter string="Taking leave" name="leave_count" domain="[('leave_count', '&gt;', 0)]"/>
+          <filter string="Not taking leave" name="leave_count" domain="[('leave_count', '=', 0)]"/>
+          <filter string="Taking leave more than 1 day" name="leave_count" domain="[('leave_count', '&gt;', 1)]"/>
         </search>
       </field>
     </record>

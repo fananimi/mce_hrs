@@ -44,23 +44,26 @@ class Leave(models.Model):
     def _compute_remaining_leave(self):
         for leave in self:
             if leave.employee_id:
-                today = datetime.now().date()
-                joined_date = leave.employee_id.joined_date
-                join_duration = (today - joined_date).days / 365
-                multiplier = int(join_duration * 10 ** 0) / 10 ** 0
-                max_leave = multiplier * 12
-
-                domain = [
-                    ('employee_id', '=', leave.employee_id.id),
-                    ('state', '=', 'done')
-                ]
-                leave_history = self.env['mce_hr.leave'].sudo()\
-                    .search(domain).mapped('duration')
-
-                leave_taken = sum(leave_history)
-                self.remaining_leave = max_leave - leave_taken
+                remaining_leave = self.env['mce_hr.leave'].\
+                    get_remaining_leave(leave.employee_id)
+                self.remaining_leave = remaining_leave
             else:
                 self.remaining_leave = 0
+
+    @api.model
+    def get_remaining_leave(self, employee_id):
+        today = datetime.now().date()
+        joined_date = employee_id.joined_date
+        join_duration = (today - joined_date).days / 365
+        multiplier = int(join_duration * 10 ** 0) / 10 ** 0
+        max_leave = multiplier * 12
+        domain = [
+            ('employee_id', '=', employee_id.id),
+            ('state', '=', 'done')
+        ]
+        leave_history = self.search(domain).mapped('duration')
+        leave_taken = sum(leave_history)
+        return (max_leave - leave_taken)
 
     @api.depends('date_from', 'date_to')
     def _compute_duration(self):

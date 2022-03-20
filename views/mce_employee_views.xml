@@ -9,6 +9,15 @@
       <field name="arch" type="xml">
         <form>
           <sheet>
+            <div class="oe_button_box" name="button_box">
+              <button type="object"
+                name="action_leave_balance"
+                class="oe_stat_button"
+                icon="fa-file"
+                groups="mce_hr.group_mce_hr_staff">
+                <field name="leave_balance" widget="statinfo" string="Leave Balance"/>
+              </button>
+            </div>
             <group>
               <group>
                 <field name="name"/>

@@ -34,8 +34,21 @@ class Employee(models.Model):
     contact_address = fields.Char(compute='_compute_contact_address', string='Complete Address')
 
     leave_ids = fields.One2many('mce_hr.leave', 'employee_id', string='Leave History',
-        readonly=True, copy=True, auto_join=True)
+        readonly=True, copy=True, auto_join=True, domain=[('state', '=', 'done')])
+    leave_count = fields.Integer(readonly=True, compute='_compute_leave_count')
+    leave_balance = fields.Integer(readonly=True, compute='_compute_leave_balance')
 
+    @api.depends('leave_ids')
+    def _compute_leave_count(self):
+        for employee in self:
+            employee.leave_count = sum(employee.leave_ids.mapped('duration'))
+
+    def _compute_leave_balance(self):
+        for employee in self:
+            employee.leave_balance = self.env['mce_hr.leave'].get_remaining_leave(employee)
+
+    def action_leave_balance(self):
+        return True
 
     @api.depends(lambda self: self._display_address_depends())
     def _compute_contact_address(self):

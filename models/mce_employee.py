@@ -23,13 +23,13 @@ class Employee(models.Model):
     city_id = fields.Many2one("res.country.city", string='City', ondelete='restrict',
         required=True)
     district_id = fields.Many2one("res.country.district", string='District',
-        ondelete='restrict', required=True)
+        ondelete='restrict', required=False)
     subdistrict_id = fields.Many2one("res.country.subdistrict", string='Sub District',
-        ondelete='restrict', required=True)
+        ondelete='restrict', required=False)
 
     street = fields.Char(string="Address Line 1", required=True)
-    street2 = fields.Char(string="Address Line 2", required=True)
-    zip = fields.Char(change_default=True)
+    street2 = fields.Char(string="Address Line 2", required=False)
+    zip = fields.Char(change_default=True, required=False)
     city = fields.Char()
     contact_address = fields.Char(compute='_compute_contact_address', string='Complete Address')
 

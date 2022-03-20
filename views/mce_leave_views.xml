@@ -56,23 +56,6 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="mce_hr.action_server">
-      <field name="name">mce_hr server</field>
-      <field name="model_id" ref="model_mce_hr_mce_hr"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
-
     <!-- actions -->
 
     <menuitem name="Leaves" id="mce_hr.menu_leave_list" parent="mce_hr.leave"

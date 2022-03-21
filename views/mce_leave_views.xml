@@ -9,7 +9,9 @@
       <field name="arch" type="xml">
         <form>
           <header>
-            <button name="action_approve" string="Approve" type="object" states="draft" class="btn-primary"
+            <button name="action_submit" string="Submit" type="object" states="draft" class="btn-primary"
+                    groups="mce_hr.group_mce_hr_staff"/>
+            <button name="action_approve" string="Approve" type="object" states="waiting" class="btn-primary"
                     groups="mce_hr.group_mce_hr_manager"/>
             <field name="state" widget="statusbar" statusbar_visible="draft,waiting,done"/>
           </header>
@@ -41,8 +43,8 @@
           <field name="employee_name"/>
           <field name="date_from"/>
           <field name="duration"/>
-          <field name="description"/>
-          <field name="state"/>
+	  <field name="description"/>
+          <field name="state" widget="badge" decoration-info="state in ('draft')" decoration-success="state in ('done')" decoration-warning="state == 'waiting'" />
         </tree>
       </field>
     </record>

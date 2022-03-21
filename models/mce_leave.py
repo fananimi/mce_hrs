@@ -36,6 +36,14 @@ class Leave(models.Model):
                 raise ValidationError(_('The remaining leave is less than the requested duration!'))
             leave.state = "done"
 
+    def action_submit(self):
+        for leave in self:
+            duration = leave.duration
+            remaining_leave = leave.remaining_leave
+            if duration > remaining_leave:
+                raise ValidationError(_('The remaining leave is less than the requested duration!'))
+            leave.state = "waiting"
+
     @api.depends('duration', 'description')
     def _compute_name(self):
         for leave in self:

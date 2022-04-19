@@ -49,13 +49,33 @@
       </field>
     </record>
 
+    <record id="view_leave_calendar" model="ir.ui.view">
+        <field name="name">leave.calendar</field>
+        <field name="model">mce_hr.leave</field>
+        <field name="arch" type="xml">
+            <calendar string="Leaves" date_start="date_from"  date_stop="date_to"  mode="month" quick_add="False">
+                <!-- <field name="currency_id" invisible="1"/> -->
+                <!-- <field name="partner_id" avatar_field="image_128"/> -->
+                <!-- <field name="amount_total" widget="monetary"/> -->
+                <!-- <field name="payment_term_id"/> -->
+                <!-- <field name="state" filters="1" invisible="1"/> -->
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="employee_reg_id"/>
+                <field name="employee_name"/>
+                <field name="description"/>
+                <field name="duration"/>
+            </calendar>
+        </field>
+    </record>
+
 
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="mce_hr.view_leave_list">
       <field name="name">Leave List</field>
       <field name="res_model">mce_hr.leave</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,calendar</field>
     </record>
 
     <!-- actions -->

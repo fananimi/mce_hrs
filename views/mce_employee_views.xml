@@ -123,7 +123,7 @@
       <field eval="3" name="priority"/>
       <field name="arch" type="xml">
         <search>
-          <field name="leave_count"/>
+          <field name="name" string="Employee" filter_domain="['|',('name', 'ilike', self), ('register_id', 'ilike', self)]"/>
           <filter string="Taking leave" name="leave_count" domain="[('leave_count', '&gt;', 0)]"/>
           <filter string="Not taking leave" name="leave_count" domain="[('leave_count', '=', 0)]"/>
           <filter string="Taking leave more than 1 day" name="leave_count" domain="[('leave_count', '&gt;', 1)]"/>

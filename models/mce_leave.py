@@ -12,15 +12,15 @@ class Leave(models.Model):
     _order = 'date_from DESC'
 
     name = fields.Char(readonly=True, string="Display name", compute='_compute_name')
-    employee_id = fields.Many2one('mce_hr.employee', required=True)
+    employee_id = fields.Many2one('mce_hr.employee', required=True, readonly=True, states={'draft': [('readonly', False)]})
     employee_name = fields.Char(readonly=True, related="employee_id.name")
     employee_reg_id = fields.Char(readonly=True, related="employee_id.register_id", string="Employee ID")
-    date_from = fields.Date(required=True, string="Start Date")
-    date_to = fields.Date(required=True, string="End Date")
+    date_from = fields.Date(required=True, string="Start Date", readonly=True, states={'draft': [('readonly', False)]})
+    date_to = fields.Date(required=True, string="End Date", readonly=True, states={'draft': [('readonly', False)]})
     duration = fields.Integer(compute='_compute_duration', string='Leave Duration', readonly=True)
     remaining_leave = fields.Integer(compute='_compute_remaining_leave',
         string='Remaining Leave', readonly=True)
-    description = fields.Text(required=True, string="Description")
+    description = fields.Text(required=True, string="Description", readonly=True, states={'draft': [('readonly', False)]})
 
     state = fields.Selection([
         ('draft', 'Draft'),

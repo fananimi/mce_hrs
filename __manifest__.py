@@ -27,10 +27,10 @@
     # always loaded
     'data': [
         # data
-        'data/res.country.state.csv',
-        'data/res.country.city.csv',
-        'data/res.country.district.csv',
-        'data/res.country.subdistrict.csv',
+        # 'data/res.country.state.csv',
+        # 'data/res.country.city.csv',
+        # 'data/res.country.district.csv',
+        # 'data/res.country.subdistrict.csv',
         # 'data/mce_hr.employee.xlsx',
         # 'data/mce_hr.leave.xlsx',
 

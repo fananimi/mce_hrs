@@ -17,7 +17,7 @@ class Leave(models.Model):
     employee_reg_id = fields.Char(readonly=True, related="employee_id.register_id", string="Employee ID")
     date_from = fields.Date(required=True, string="Start Date")
     date_to = fields.Date(required=True, string="End Date")
-    date_to_cal = fields.Date(required=True, string="End Date for Calendar", compute='_compute_date_to_cal', store=True)
+    date_to_cal = fields.Date(required=False, string="End Date for Calendar", compute='_compute_date_to_cal', store=True)
     duration = fields.Integer(compute='_compute_duration', string='Leave Duration', readonly=True)
     remaining_leave = fields.Integer(compute='_compute_remaining_leave',
         string='Remaining Leave', readonly=True)

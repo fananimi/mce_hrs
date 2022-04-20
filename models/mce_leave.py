@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from dateutil.relativedelta import relativedelta
-from datetime import datetime
+from datetime import datetime, timedelta
 from odoo.exceptions import ValidationError
 from odoo import models, fields, api, _
 
@@ -17,6 +17,7 @@ class Leave(models.Model):
     employee_reg_id = fields.Char(readonly=True, related="employee_id.register_id", string="Employee ID")
     date_from = fields.Date(required=True, string="Start Date")
     date_to = fields.Date(required=True, string="End Date")
+    date_to_cal = fields.Date(required=True, string="End Date for Calendar", compute='_compute_date_to_cal', store=True)
     duration = fields.Integer(compute='_compute_duration', string='Leave Duration', readonly=True)
     remaining_leave = fields.Integer(compute='_compute_remaining_leave',
         string='Remaining Leave', readonly=True)
@@ -88,3 +89,9 @@ class Leave(models.Model):
                     raise ValidationError(_('Incorrect End date!'))
             else:
                 self.duration = 0
+
+    @api.depends('date_to')
+    def _compute_date_to_cal(self):
+        for leave in self:
+            end_cal = leave.date_to + timedelta(days=1)
+            leave.date_to_cal = end_cal

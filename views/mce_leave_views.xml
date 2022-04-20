@@ -18,12 +18,12 @@
           <sheet>
             <group>
               <group>
-                <field name="employee_id"/>
-                <field name="description"/>
+                <field name="employee_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="description" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
               </group>
               <group>
-                <field name="date_from"/>
-                <field name="date_to"/>
+                <field name="date_from" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="date_to" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                 <field name="duration"/>
                 <field name="remaining_leave"/>
               </group>
@@ -53,7 +53,7 @@
         <field name="name">leave.calendar</field>
         <field name="model">mce_hr.leave</field>
         <field name="arch" type="xml">
-            <calendar string="Leaves" date_start="date_from"  date_stop="date_to"  mode="month" quick_add="False">
+            <calendar string="Leaves" date_start="date_from"  date_stop="date_to_cal"  mode="month" quick_add="False">
                 <!-- <field name="currency_id" invisible="1"/> -->
                 <!-- <field name="partner_id" avatar_field="image_128"/> -->
                 <!-- <field name="amount_total" widget="monetary"/> -->
@@ -69,13 +69,25 @@
         </field>
     </record>
 
+    <!-- graph -->
+    <record model="ir.ui.view" id="view_leave_graph">
+        <field name="name">mce_hr.leave.graph</field>
+        <field name="model">mce_hr.leave</field>
+        <field name="arch" type="xml">
+            <graph string="Leave Analysis" stacked="True" sample="1" disable_linking="1">
+                <field name="description"/>
+                <field name="date_from" interval="month" type="row"/>
+                <field name="employee_id" type="col"/>
+            </graph>
+        </field>
+    </record>
 
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="mce_hr.view_leave_list">
       <field name="name">Leave List</field>
       <field name="res_model">mce_hr.leave</field>
-      <field name="view_mode">tree,form,calendar</field>
+      <field name="view_mode">tree,form,calendar,graph</field>
     </record>
 
     <!-- actions -->
